@@ -1,16 +1,27 @@
 package com.wayne.spring.pojo;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.ToString;
 
 /**
  * @author wayne
  * @date 2022-08-11 22:09
  */
-@Slf4j
+@ToString
 public class User {
 
-    public void add(){
-        log.info("add...");
+    private String name;
+    private int age;
+    private String address;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

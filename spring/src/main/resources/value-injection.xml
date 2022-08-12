@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用无参构造创建对象，set方法注入属性值-->
+    <bean id="user" class="com.wayne.spring.pojo.User">
+        <property name="name" value="张三"/>
+        <property name="age" value="25"/>
+        <!--注入null-->
+        <property name="address">
+            <null/>
+        </property>
+    </bean>
+
+    <!--使用p命名空间，简化set注入-->
+    <bean id="p_user" class="com.wayne.spring.pojo.User" p:name="hello" p:age="30" p:address="南京"/>
+
+    <!--setter注入特殊符号-->
+    <bean id="user_special_character" class="com.wayne.spring.pojo.User">
+        <property name="name" value="张三"/>
+        <property name="age" value="25"/>
+        <!--使用CDATA块-->
+        <property name="address">
+            <value><![CDATA[《北京》]]></value>
+        </property>
+    </bean>
+
+
+    <!--有参构造创建对象，注入属性值-->
+    <bean id="emp" class="com.wayne.spring.pojo.Emp">
+        <constructor-arg name="name" value="李四"/>
+        <constructor-arg name="password" value="abcd"/>
+        <!--注入null-->
+        <constructor-arg name="address">
+            <null/>
+        </constructor-arg>
+    </bean>
+
+    <!--使用c命名空间，简化有参构造注入-->
+    <bean id="c_emp" class="com.wayne.spring.pojo.Emp" c:name="王五" c:password="123456" c:address="南京"/>
+
+    <!--有参构造注入特殊符号-->
+    <bean id="emp_special_character" class="com.wayne.spring.pojo.Emp">
+        <constructor-arg name="name" value="李四"/>
+        <constructor-arg name="password" value="abcd"/>
+        <!--使用CDATA块-->
+        <constructor-arg name="address">
+            <value><![CDATA[《北京》]]></value>
+        </constructor-arg>
+    </bean>
+
+</beans>

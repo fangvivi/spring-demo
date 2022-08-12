@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--在bean标签内部嵌套bean标签，实现setter注入-->
+    <bean id="student" class="com.wayne.spring.pojo.Student">
+        <property name="name" value="小明"/>
+        <property name="gender" value="男"/>
+        <property name="grade">
+            <!--这个bean不能通过容器直接获取-->
+            <bean class="com.wayne.spring.pojo.Grade">
+                <property name="className" value="三年一班"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!--级联属性，实现setter注入-->
+    <bean id="student1" class="com.wayne.spring.pojo.Student">
+        <property name="name" value="小明"/>
+        <property name="gender" value="男"/>
+        <property name="grade" ref="grade"/>
+        <!--要有grade属性的get方法-->
+        <property name="grade.className" value="三年级"/>
+    </bean>
+    <bean id="grade" class="com.wayne.spring.pojo.Grade"/>
+
+    <!--在bean标签内部嵌套bean标签，实现构造器注入-->
+    <bean id="student2" class="com.wayne.spring.pojo.Student">
+        <constructor-arg name="name" value="周杰伦"/>
+        <constructor-arg name="gender" value="男"/>
+        <constructor-arg name="grade">
+            <!--这个bean不能通过容器直接获取-->
+            <bean class="com.wayne.spring.pojo.Grade">
+                <property name="className" value="三年一班"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+</beans>

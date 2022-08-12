@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--使用util命名空间把list提取出来-->
+    <util:list id="list">
+        <value>张三</value>
+        <value>李四</value>
+    </util:list>
+
+    <!--注入各种集合-->
+    <bean id="goodStudent" class="com.wayne.spring.pojo.GoodStudent">
+        <!--数组属性注入-->
+        <property name="courses">
+            <array>
+                <value>数据结构</value>
+                <value>计算机组成原理</value>
+            </array>
+        </property>
+        <!--list属性注入，直接引用util命名空间-->
+        <property name="list" ref="list"/>
+        <!--map属性注入-->
+        <property name="maps">
+            <map>
+                <entry key="JAVA" value="java"/>
+                <entry key="PHP" value="php"/>
+            </map>
+        </property>
+        <!--set属性注入-->
+        <property name="sets">
+            <set>
+                <value>MySQL</value>
+                <value>Redis</value>
+            </set>
+        </property>
+        <!--对象list注入-->
+        <property name="courseList">
+            <list>
+                <ref bean="course1"/>
+                <ref bean="course2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="course1" class="com.wayne.spring.pojo.Course">
+        <property name="courseName" value="spring框架"/>
+    </bean>
+    <bean id="course2" class="com.wayne.spring.pojo.Course">
+        <property name="courseName" value="mybatis框架"/>
+    </bean>
+
+
+</beans>
