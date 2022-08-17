@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * @author wayne
  */
-class TestXmlPlainBeanInjection {
+class TestXmlBeanInjection {
 
     /**
      * 1、测试setter注入bean
@@ -19,7 +19,7 @@ class TestXmlPlainBeanInjection {
     @ParameterizedTest
     @ValueSource(strings = {"userService","userService"})
     void testSetterRefInjection(String userServiceId){
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:special-bean-injection.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:bean-injection.xml");
         final UserService userService = ctx.getBean(userServiceId, UserService.class);
         Assertions.assertNotNull(userService);
         userService.addUser();

@@ -22,7 +22,7 @@ class TestXmlSpecialBeanInjection {
     @ParameterizedTest
     @ValueSource(strings = {"student","student1","student2"})
     void testSetterRefInjection(String beanId){
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:plain-bean-injection.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:special-bean-injection.xml");
         final Student student = ctx.getBean(beanId, Student.class);
         Assertions.assertNotNull(student);
         log.info("{}", student);

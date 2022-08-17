@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1、使用set注入bean 2、使用构造器注入bean-->
+
+
+    <bean id="userDao" class="com.wayne.spring.dao.UserDaoImpl"/>
+
+    <!--setter注入外部bean-->
+    <bean id="userService" class="com.wayne.spring.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!--构造器注入外部bean-->
+    <bean id="userService2" class="com.wayne.spring.service.UserService">
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>
+
+</beans>

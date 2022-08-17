@@ -7,8 +7,10 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
 
+    <!--各种集合的注入-->
+
     <!--使用util命名空间把list提取出来-->
-    <util:list id="list">
+    <util:list id="peopleList">
         <value>张三</value>
         <value>李四</value>
     </util:list>
@@ -23,7 +25,7 @@
             </array>
         </property>
         <!--list属性注入，直接引用util命名空间-->
-        <property name="list" ref="list"/>
+        <property name="list" ref="peopleList"/>
         <!--map属性注入-->
         <property name="maps">
             <map>
