@@ -1,6 +1,5 @@
 package com.wayne.spring;
 
-import com.wayne.spring.factory.MyFactoryBean;
 import com.wayne.spring.pojo.Course;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;

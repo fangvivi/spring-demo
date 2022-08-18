@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        https://www.springframework.org/schema/context/spring-context.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--工厂bean，使用容器获取的bean是-->
+    <!--工厂bean，创建的bean类型是getObject()的返回值类型-->
     <bean id="factoryBean" class="com.wayne.spring.factory.MyFactoryBean"/>
 
 </beans>

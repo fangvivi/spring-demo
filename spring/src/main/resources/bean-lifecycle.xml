@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--验证bean的生命周期-->
+    <bean id="order" class="com.wayne.spring.pojo.Orders" init-method="init" destroy-method="destroy">
+        <property name="name" value="小米手机"/>
+    </bean>
+
+    <!--声明之后，spring容器之内创建bean的时候会自动调用初始化前后的方法-->
+    <bean id="myPostProcessor" class="com.wayne.spring.custom.MyBeanPostProcessor"/>
+
+</beans>

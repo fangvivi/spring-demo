@@ -20,4 +20,8 @@
         <property name="bookList" ref="bookList"/>
     </bean>
 
+    <!--每次创建的都是不同的bean-->
+    <bean id="booksPrototype" class="com.wayne.spring.pojo.Book" scope="prototype">
+        <property name="bookList" ref="bookList"/>
+    </bean>
 </beans>
