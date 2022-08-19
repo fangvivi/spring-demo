@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--根据类型自动注入-->
+    <bean id="pet_master" class="com.wayne.spring.autowire.Master" autowire="byType"/>
+
+    <!--根据属性名称自动注入-->
+    <bean id="pet_master1" class="com.wayne.spring.autowire.Master" autowire="byName"/>
+
+    <bean id="pet" class="com.wayne.spring.autowire.Pet">
+        <property name="petName" value="只因你太美"/>
+    </bean>
+</beans>
