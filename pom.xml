@@ -15,8 +15,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>spring</module>
+        <module>spring-xml</module>
         <module>springboot</module>
+        <module>spring-annotation</module>
     </modules>
 
     <properties>

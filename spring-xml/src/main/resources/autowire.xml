@@ -5,12 +5,12 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--根据类型自动注入-->
-    <bean id="pet_master" class="com.wayne.spring.autowire.Master" autowire="byType"/>
+    <bean id="pet_master" class="com.wayne.spring.autowired.Master" autowire="byType"/>
 
     <!--根据属性名称自动注入-->
-    <bean id="pet_master1" class="com.wayne.spring.autowire.Master" autowire="byName"/>
+    <bean id="pet_master1" class="com.wayne.spring.autowired.Master" autowire="byName"/>
 
-    <bean id="pet" class="com.wayne.spring.autowire.Pet">
+    <bean id="pet" class="com.wayne.spring.autowired.Pet">
         <property name="petName" value="只因你太美"/>
     </bean>
 </beans>

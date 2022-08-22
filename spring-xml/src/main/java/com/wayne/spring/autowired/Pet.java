@@ -1,4 +1,4 @@
-package com.wayne.spring.autowire;
+package com.wayne.spring.autowired;
 
 /**
  * @author wayne

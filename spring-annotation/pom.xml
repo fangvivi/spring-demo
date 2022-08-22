@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wayne.spring</groupId>
-    <artifactId>spring</artifactId>
+    <artifactId>spring-annotation</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -41,6 +40,11 @@
 
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
         </dependency>
         <!--lombok-->
@@ -66,13 +70,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <!--mysql连接池-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.10</version>
         </dependency>
     </dependencies>
 

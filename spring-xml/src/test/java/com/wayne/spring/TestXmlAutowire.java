@@ -1,6 +1,6 @@
 package com.wayne.spring;
 
-import com.wayne.spring.autowire.Master;
+import com.wayne.spring.autowired.Master;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

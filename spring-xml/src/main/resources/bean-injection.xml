@@ -7,15 +7,15 @@
     <!--1、使用set注入bean 2、使用构造器注入bean-->
 
 
-    <bean id="userDao" class="com.wayne.spring.dao.UserDaoImpl"/>
+    <bean id="userDao" class="com.wayne.spring.autowired.UserDaoImpl"/>
 
     <!--setter注入外部bean-->
-    <bean id="userService" class="com.wayne.spring.service.UserService">
+    <bean id="userService" class="com.wayne.spring.autowired.UserService">
         <property name="userDao" ref="userDao"/>
     </bean>
 
     <!--构造器注入外部bean-->
-    <bean id="userService2" class="com.wayne.spring.service.UserService">
+    <bean id="userService2" class="com.wayne.spring.autowired.UserService">
         <constructor-arg name="userDao" ref="userDao"/>
     </bean>
 
