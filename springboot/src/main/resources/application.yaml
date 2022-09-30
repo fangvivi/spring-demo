@@ -1,0 +1,33 @@
+person:
+  name: 张三
+  age: 25
+  birthday: 1994/01/01
+  pet:
+    name: 小白
+    weight: 10 # kg
+  hobbies:
+    - sing
+    - dance
+    - rap
+    - basketball
+  subjects: [Chinese, math, English, science]
+  score:
+    Chinese: 85 # max 100
+    math: 90
+    English: 99
+    science: 80
+  runResult:
+    - "3:20" # 1km
+    - "3:15"
+    - "2:50"
+  allPet:
+    healthy:
+      - name: 阿猫
+        weight: 10 # kg
+      - name: 小白
+        weight: 15
+      - name: 小黑
+        weight: 20
+    sick:
+      - {name: 胖胖, weight: 30}
+      - {name: 瘦瘦, weight: 8}

@@ -14,4 +14,9 @@ import lombok.ToString;
 @ToString
 public class Pet {
     private String name;
+    private double weight;
+
+    public Pet(String name) {
+        this.name = name;
+    }
 }
