@@ -3,6 +3,7 @@ package com.wayne.aop.annotation;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,40 +12,33 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 @Slf4j
+@Order(2)
 public class UserProxy {
 
-
-    /**
-     * 公共切入点
-     */
-    @Pointcut("execution(* com.wayne.aop.annotation.User.add(..))")
-    public void pointcut(){
-    //  抽取公共的切入点，方便复用
-    }
-    @Before(value = "pointcut()")
+    @Before(value = "com.wayne.aop.annotation.ConfigAop.pointcut()")
     public void before(){
-        log.info("before...");
+        log.info("UserProxy 增强 User.add()，before...");
     }
 
     @After("execution(* com.wayne.aop.annotation.User.add(..))")
     public void after(){
-        log.info("after...");
+        log.info("UserProxy 增强 User.add()，after...");
     }
 
     @AfterReturning("execution(* com.wayne.aop.annotation.User.add(..))")
     public void afterReturn(){
-        log.info("afterReturn");
+        log.info("UserProxy 增强 User.add()，afterReturn");
     }
 
     @Around(value = "execution(* com.wayne.aop.annotation.User.add(..))")
     public void around(ProceedingJoinPoint point) throws Throwable {
-        log.info("around before");
+        log.info("UserProxy 增强 User.add()，around before");
         point.proceed();
-        log.info("around after");
+        log.info("UserProxy 增强 User.add()，around after");
     }
 
     @AfterThrowing(value = "execution(* com.wayne.aop.annotation.User.add(..))")
     public void afterThrowing(){
-        log.info("AfterThrowing");
+        log.info("UserProxy 增强 User.add()，AfterThrowing");
     }
 }

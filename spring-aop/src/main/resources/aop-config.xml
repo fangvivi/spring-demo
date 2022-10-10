@@ -8,8 +8,19 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--开启注解扫描-->
-    <context:component-scan base-package="com.wayne"/>
-    <!-- 开启Aspect生成代理对象-->
-    <aop:aspectj-autoproxy/>
+
+    <!--创建对象-->
+    <bean id="book" class="com.wayne.aop.xml.Book"/>
+    <bean id="bookProxy" class="com.wayne.aop.xml.BookProxy" />
+
+    <!--配置aop增强-->
+    <aop:config proxy-target-class="true">
+        <!--配置切入点-->
+        <aop:pointcut id="buyBook" expression="execution(* com.wayne.aop.xml.Book.*(..))"/>
+        <!--配置切面-->
+        <aop:aspect ref="bookProxy">
+            <!--增强的逻辑-->
+            <aop:before method="before" pointcut-ref="buyBook" />
+        </aop:aspect>
+    </aop:config>
 </beans>
