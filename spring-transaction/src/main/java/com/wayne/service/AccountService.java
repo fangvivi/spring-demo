@@ -11,12 +11,12 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
  * @author wayne
  */
 @Service
-@Transactional(rollbackFor = Exception.class)
 @Slf4j
 public class AccountService {
     @Autowired
     private UserDao userDao;
 
+    @Transactional(rollbackFor = Exception.class)
     public void accountMoney() {
         /*
         被try catch包围的逻辑，aop无法进行回滚
