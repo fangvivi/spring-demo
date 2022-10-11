@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>员工信息填报</title>
+</head>
+
+<body>
+<h2>Springboot + Thymeleaf 表单示例</h2>
+<form th:action="@{/addEmployee}" method="POST">
+    <label>
+        id: <input type="text" name="id"  value=""/>
+    </label><br/>
+    <label>
+        name: <input type="text" name="name"  value=""/>
+    </label><br/>
+
+    <input type="submit" value="提交"/>
+</form>
+
+</body>
+</html>
