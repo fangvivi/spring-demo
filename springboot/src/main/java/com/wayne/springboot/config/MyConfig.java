@@ -12,14 +12,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyConfig {
 
-    @Bean(name="user")
-    @ConditionalOnBean(name="tom")
-    public User getUser(){
-        return new User("张三",25,null);
-    }
-
     @Bean("tom")
     public Pet getPet(){
         return new Pet("tom");
+    }
+
+    @Bean("user")
+    @ConditionalOnBean(name="tom")
+    public User getUser(){
+        return new User("张三",25);
     }
 }
