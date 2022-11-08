@@ -10,7 +10,10 @@ import javax.annotation.Resource;
 @Component
 public class Emp {
     /**
-     * 注解@Resource先根据名称注入，没有的话，再根据类型注入
+     * 注解@Resource根据
+     *   1. Match by Name
+     *   2. Match by Type
+     *   3. Match by Qualifier
      */
     @Resource
     private Dept dept;

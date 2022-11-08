@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 注解@Autowired是根据类型注入
+ * 注解@Autowired是根据
+ * Match by Type
+ * Match by Qualifier
+ * Match by Name
  * @author wayne
  */
 @Slf4j

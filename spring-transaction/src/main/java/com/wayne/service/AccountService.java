@@ -4,6 +4,8 @@ import com.wayne.dao.UserDao;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
@@ -16,7 +18,10 @@ public class AccountService {
     @Autowired
     private UserDao userDao;
 
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional(
+            rollbackFor = Exception.class,
+            propagation = Propagation.REQUIRED,
+            isolation = Isolation.REPEATABLE_READ)
     public void accountMoney() {
         /*
         被try catch包围的逻辑，aop无法进行回滚

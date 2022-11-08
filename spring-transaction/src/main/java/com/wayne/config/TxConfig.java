@@ -39,7 +39,7 @@ public class TxConfig {
      * @return JdbcTemplate
      */
     @Bean
-    public JdbcTemplate jdbcTemplate(DruidDataSource dataSource){
+    public JdbcTemplate getJdbcTemplate(DruidDataSource dataSource){
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource);
         return jdbcTemplate;

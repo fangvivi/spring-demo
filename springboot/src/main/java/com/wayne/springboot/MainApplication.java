@@ -8,8 +8,9 @@ import org.springframework.context.ApplicationContext;
 /**
  * @author wayne
  */
-@SpringBootApplication
+
 @Slf4j
+@SpringBootApplication
 public class MainApplication {
     public static void main(String[] args) {
         final ApplicationContext context = SpringApplication.run(MainApplication.class, args);
