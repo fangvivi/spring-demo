@@ -16,7 +16,7 @@ public class MainApplication {
         final ApplicationContext context = SpringApplication.run(MainApplication.class, args);
         String[] beanDefinitionNames = context.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
-            log.info("beanName--{}", beanDefinitionName);
+            //log.info("beanName--{}", beanDefinitionName);
         }
         log.info("spring容器是否包含user :{}", context.containsBean("user"));
         log.info("spring容器是否包含tom :{}", context.containsBean("tom"));
